@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="tests">
+    <test name="Google_Pixel_3">
+        <parameter name="platformName" value="iOS"/>
+        <classes>
+            <class name="qa.tests.ProductTests"/>
+        </classes>
+    </test>
+</suite> <!-- Suite -->

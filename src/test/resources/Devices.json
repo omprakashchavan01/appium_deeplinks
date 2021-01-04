@@ -1,0 +1,14 @@
+{
+  "Android": {
+    "device": "Google Pixel 3",
+    "udid": "emulator-5554",
+    "app_url": "/src/test/resources/app/Android.SauceLabs.Mobile.Sample.app.2.2.1.apk",
+    "appPackage": "com.swaglabsmobileapp",
+    "appActivity": "com.swaglabsmobileapp.SplashActivity"
+  },
+  "iOS": {
+    "device": "iPhone XS",
+    "udid": "63E2D54C-CA63-4ECA-89C2-61F2F41EE2F7",
+    "app_url": "/src/test/resources/app/SwagLabsMobileApp.app"
+  }
+}
