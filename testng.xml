@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Suite" parallel="tests">
-    <test name="Google_Pixel_3">
-        <parameter name="platformName" value="iOS"/>
+    <test name="Google_Pixel_5">
+        <parameter name="platformType" value="Android"/>
         <classes>
-            <class name="qa.tests.ProductTests"/>
+            <class name="qa.tests.MyDemoTest"/>
+        </classes>
+    </test>
+    <test name="iPhone14 Pro Max">
+        <parameter name="platformType" value="iOS"/>
+        <classes>
+            <class name="qa.tests.MyDemoTest"/>
         </classes>
     </test>
 </suite> <!-- Suite -->

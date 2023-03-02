@@ -1,14 +1,15 @@
 {
   "Android": {
-    "device": "Google Pixel 3",
+    "device": "Pixel_5",
     "udid": "emulator-5554",
-    "app_url": "/src/test/resources/app/Android.SauceLabs.Mobile.Sample.app.2.2.1.apk",
-    "appPackage": "com.swaglabsmobileapp",
-    "appActivity": "com.swaglabsmobileapp.SplashActivity"
+    "app_url": "/src/test/resources/app/Android-MyDemoAppRN.1.3.0.build-244.apk",
+    "appPackage": "com.saucelabs.mydemoapp.rn",
+    "appActivity": ".MainActivity"
   },
   "iOS": {
-    "device": "iPhone XS",
-    "udid": "63E2D54C-CA63-4ECA-89C2-61F2F41EE2F7",
-    "app_url": "/src/test/resources/app/SwagLabsMobileApp.app"
+    "device": "iPhone 14 Pro Max",
+    "udid": "D1165CFE-65F4-4A21-8C84-1CB3FEBE8364",
+    "bundleId": "com.saucelabs.mydemoapp.rn",
+    "app_url": "/src/test/resources/app/MyRNDemoApp.app"
   }
 }
