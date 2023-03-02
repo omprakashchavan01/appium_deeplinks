@@ -1,39 +1,22 @@
 package qa.pages;
 
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.pagefactory.AndroidFindBy;
-import io.appium.java_client.pagefactory.iOSXCUITFindBy;
+import io.appium.java_client.AppiumDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import qa.base.BasePage;
+import qa.byfactory.ByElementManager;
+import qa.byfactory.ByElementManagerFactory;
 
 public class ProductsPage extends BasePage {
+    private final ByElementManager byElementManager;
 
-    @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-Toggle\"]/preceding-sibling::android.widget.TextView")
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"test-Toggle\"]/parent::*[1]/preceding-sibling::*[1]")
-    private MobileElement productTitleTxt;
-
-    @AndroidFindBy(xpath = "(//android.widget.TextView[@content-desc=\"test-Item title\"])[1]")
-    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeStaticText[@name=\"test-Item title\"])[1]")
-    private MobileElement SLBTitle;
-
-    @AndroidFindBy(xpath = "(//android.widget.TextView[@content-desc=\"test-Price\"])[1]")
-    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeStaticText[@name=\"test-Price\"])[1]")
-    private MobileElement SLBPrice;
-
-    public String getTitle() {
-        return wait.until(ExpectedConditions.visibilityOf(productTitleTxt)).getText();
+    public ProductsPage(AppiumDriver driver) {
+        super(driver);
+        byElementManager = ByElementManagerFactory.getByElementManager(platformType);
     }
 
-    public String getSLBTitle() {
-        return wait.until(ExpectedConditions.visibilityOf(SLBTitle)).getText();
-    }
-
-    public String getSLBPrice() {
-        return wait.until(ExpectedConditions.visibilityOf(SLBPrice)).getText();
-    }
-
-    public ProductDetailsPage pressSLBTitle() {
-        wait.until(ExpectedConditions.visibilityOf(SLBTitle)).click();
-        return new ProductDetailsPage();
+    public void clickProduct(String title) {
+        By productTitle = byElementManager.getXpathUsingTextOrName(title);
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(productTitle))).click();
     }
 }
