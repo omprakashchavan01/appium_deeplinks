@@ -8,7 +8,8 @@ import qa.base.BasePage;
 
 public class ProductsPage extends BasePage {
 
-    @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-Toggle\"]/preceding-sibling::android.widget.TextView")
+//    @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-Toggle\"]/preceding-sibling::android.widget.TextView")
+    @AndroidFindBy (xpath = "//android.widget.TextView[@text='PRODUCTS']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"test-Toggle\"]/parent::*[1]/preceding-sibling::*[1]")
     private WebElement productTitleTxt;
 
