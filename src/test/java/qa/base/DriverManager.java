@@ -24,10 +24,11 @@ public class DriverManager {
         AppiumDriver driver;
         JSONObject deviceObj = new JSONObject(JsonParser.parse("Devices.json").getJSONObject(platformName).toString());
         DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("automationName", deviceObj.getString("automationName"));
         caps.setCapability("platformName", platformName);
         caps.setCapability("udid", deviceObj.getString("udid"));
         caps.setCapability("app", System.getProperty("user.dir") + deviceObj.getString("app_url"));
-        URL url = new URL("http://127.0.0.1:4723/wd/hub");
+        URL url = new URL("http://127.0.0.1:4723");
 
         switch(platformName) {
             case "Android":
@@ -37,7 +38,6 @@ public class DriverManager {
                 break;
             case "iOS":
                 caps.setCapability("deviceName", deviceObj.getString("device"));
-                caps.setCapability("automationName", "XCUITest");
                 driver = new IOSDriver(url, caps);
                 break;
             default:

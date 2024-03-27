@@ -1,14 +1,16 @@
 {
   "Android": {
-    "device": "Google Pixel 3",
+    "automationName": "UiAutomator2",
+    "device": "Google Pixel 5",
     "udid": "emulator-5554",
     "app_url": "/src/test/resources/app/Android.SauceLabs.Mobile.Sample.app.2.2.1.apk",
     "appPackage": "com.swaglabsmobileapp",
     "appActivity": "com.swaglabsmobileapp.SplashActivity"
   },
   "iOS": {
-    "device": "iPhone XS",
-    "udid": "63E2D54C-CA63-4ECA-89C2-61F2F41EE2F7",
+    "automationName": "XCUITest",
+    "device": "iPhone 14 Pro Max",
+    "udid": "00C33F13-93B4-4B19-8822-DA22D9F911C4",
     "app_url": "/src/test/resources/app/SwagLabsMobileApp.app"
   }
 }
